@@ -1,49 +1,25 @@
 package me.belardinelli.lodPotions;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Desktop;
-import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-
-import net.miginfocom.swing.MigLayout;
-
 import javax.swing.ImageIcon;
-
-import com.jgoodies.forms.factories.FormFactory;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.RowSpec;
-
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import java.awt.CardLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.border.TitledBorder;
+import javax.swing.border.Border;
 
-public class Hats extends JPanel {
+public class Hats extends JFrame {
 	
 	private JPanel Page_1;
 	private JPanel Page_2;
@@ -202,7 +178,7 @@ public class Hats extends JPanel {
         hats.getContentPane().add(easter_egg, easter_egg_1);  
         
         JLabel lblEasterEgg = new JLabel("");
-        lblEasterEgg.setIcon(new ImageIcon(Hats.class.getResource("/resources/trippy.gif")));
+        lblEasterEgg.setIcon(new ImageIcon(Hats.class.getResource("/resources/trippy_1.gif")));
         easter_egg.add(lblEasterEgg);
         
         buttons = new JPanel();
@@ -229,7 +205,8 @@ public class Hats extends JPanel {
 				else
 					page--;
 				easter--;
-				if(easter >= 8){
+				if(easter == 7){
+					lblNewLabel.setText("Trippy Easter Egg :O");
 					Page_1.setVisible(false);
 					Page_2.setVisible(false);
 					easter_egg.setVisible(true);
@@ -257,7 +234,7 @@ public class Hats extends JPanel {
 				else
 					page++;
 				easter++;
-				if(easter >= 8){
+				if(easter == 7){
 					Page_1.setVisible(false);
 					Page_2.setVisible(false);
 					easter_egg.setVisible(true);
@@ -268,7 +245,10 @@ public class Hats extends JPanel {
 					easter_egg.setVisible(false);
 				}
 				System.out.println(easter);
-				lblNewLabel.setText("Page " + page);
+				if(easter == 7)
+					lblNewLabel.setText("Trippy Easter Egg :O");
+				else
+					lblNewLabel.setText("Page " + page);
 			}
 		});
         

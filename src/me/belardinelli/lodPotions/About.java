@@ -48,7 +48,7 @@ public class About extends JPanel {
         		+ " Useful tool to remember the potions effects on Legend Of Dungeon<br>"
         		+ "Slowly adding more stuff to it<br>"
         		+ "Also cute sheep gif for your entertainment<br><br>"
-        		+ "Version 0.3a (far from complete)</body></html>");
+        		+ "Version 0.3b (far from complete)</body></html>");
         f.getContentPane().add(lblProgramCreatedBy, "2, 1, left, center");
         
         JLabel website = new JLabel("<html><body>My Website (it's ready, but pretty ugly)</body></html>");
