@@ -41,12 +41,17 @@ import javax.swing.SwingConstants;
 import java.awt.CardLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.TitledBorder;
 
 public class Hats extends JPanel {
 	
 	private JPanel Page_1;
 	private JPanel Page_2;
 	private JPanel buttons;
+	private JPanel easter_egg;
+	private JLabel lblNewLabel;
+	private int page = 1;
+	private int easter = 0;
 	
 	public Hats() {
 		JFrame hats = new JFrame("Special Hats");
@@ -187,6 +192,19 @@ public class Hats extends JPanel {
         lblParty_I.setIcon(new ImageIcon(Hats.class.getResource("/resources/Party_Hat.png")));
         party_i.add(lblParty_I);
         
+        easter_egg = new JPanel();
+        easter_egg.setVisible(false);
+        GridBagConstraints easter_egg_1 = new GridBagConstraints();
+        easter_egg_1.insets = new Insets(0, 0, 5, 0);
+        easter_egg_1.fill = GridBagConstraints.HORIZONTAL;
+        easter_egg_1.gridx = 0;
+        easter_egg_1.gridy = 0;
+        hats.getContentPane().add(easter_egg, easter_egg_1);  
+        
+        JLabel lblEasterEgg = new JLabel("");
+        lblEasterEgg.setIcon(new ImageIcon(Hats.class.getResource("/resources/trippy.gif")));
+        easter_egg.add(lblEasterEgg);
+        
         buttons = new JPanel();
         GridBagConstraints gbc_buttons = new GridBagConstraints();
         gbc_buttons.fill = GridBagConstraints.BOTH;
@@ -195,7 +213,7 @@ public class Hats extends JPanel {
         hats.getContentPane().add(buttons, gbc_buttons);
         buttons.setLayout(new BorderLayout(0, 0));
         
-        JLabel lblNewLabel = new JLabel("Page METTIMI DINAMICO :DD");
+        lblNewLabel = new JLabel("Page " + page);
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
         buttons.add(lblNewLabel, BorderLayout.CENTER);
         
@@ -206,6 +224,24 @@ public class Hats extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				Page_1.setVisible(true);
 				Page_2.setVisible(false);
+				if (page == 1)
+					page = 1;
+				else
+					page--;
+				easter--;
+				if(easter >= 8){
+					Page_1.setVisible(false);
+					Page_2.setVisible(false);
+					easter_egg.setVisible(true);
+				}
+				else{
+					Page_1.setVisible(true);
+					Page_2.setVisible(false);
+					easter_egg.setVisible(false);
+				}
+				System.out.println(easter);
+				lblNewLabel.setText("Page " + page);
+				
 			}
 		});
         
@@ -216,6 +252,23 @@ public class Hats extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				Page_1.setVisible(false);
 				Page_2.setVisible(true);
+				if (page == 2)
+					page = 2;
+				else
+					page++;
+				easter++;
+				if(easter >= 8){
+					Page_1.setVisible(false);
+					Page_2.setVisible(false);
+					easter_egg.setVisible(true);
+				}
+				else{
+					Page_1.setVisible(false);
+					Page_2.setVisible(true);
+					easter_egg.setVisible(false);
+				}
+				System.out.println(easter);
+				lblNewLabel.setText("Page " + page);
 			}
 		});
         
