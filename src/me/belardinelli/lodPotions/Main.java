@@ -362,9 +362,8 @@ public class Main {
 		String line;
 		int i = 0;
 		while ((line = br.readLine()) != null) {
-			System.out.println(line);
+			//System.out.println(line);
 			contents[i] = Integer.parseInt(line);
-			//System.out.println(contents[i]);
 			i++;
 		}
 	 
@@ -416,7 +415,7 @@ public class Main {
 			b = fout.createNewFile();
 		}
 		if (b)
-			System.out.println("Crated File!");
+			System.out.println("Created File!");
 		else
 			System.out.println("Failed to create or file already exists!");
 	}

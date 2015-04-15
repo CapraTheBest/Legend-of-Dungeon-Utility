@@ -38,10 +38,14 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class Hats extends JPanel {
 	
 	private JPanel Page_1;
+	private JPanel Page_2;
 	private JPanel buttons;
 	
 	public Hats() {
@@ -59,17 +63,17 @@ public class Hats extends JPanel {
         gridBagLayout.rowWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
         hats.getContentPane().setLayout(gridBagLayout);
         
-        /*Page_1 = new JPanel();
+        Page_1 = new JPanel();
         GridBagConstraints gbc_Page_1 = new GridBagConstraints();
         gbc_Page_1.insets = new Insets(0, 0, 5, 0);
         gbc_Page_1.fill = GridBagConstraints.BOTH;
         gbc_Page_1.gridx = 0;
         gbc_Page_1.gridy = 0;
         hats.getContentPane().add(Page_1, gbc_Page_1);
-        Page_1.setLayout(new MigLayout("", "[94px][174px][182px]", "[273px][]"));
+        Page_1.setLayout(new GridLayout(0, 3, 0, 0));
         
         JPanel khat_n = new JPanel();
-        Page_1.add(khat_n, "cell 0 0,alignx left,aligny center");
+        Page_1.add(khat_n);
         khat_n.setBorder(b_name);
         khat_n.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         
@@ -77,14 +81,14 @@ public class Hats extends JPanel {
         khat_n.add(lblKhat_N);
         
         JPanel khat_d = new JPanel();
-        Page_1.add(khat_d, "cell 1 0,alignx left,aligny center");
+        Page_1.add(khat_d);
         khat_d.setBorder(b_desc);
         
         JLabel lblKhat_D = new JLabel("Can be used to tame a Mummy.");
         khat_d.add(lblKhat_D);
         
         JPanel khat_i = new JPanel();
-        Page_1.add(khat_i, "cell 2 0,alignx left,aligny top");
+        Page_1.add(khat_i);
         khat_i.setBorder(b_image);
         
         JLabel lblKhat_I = new JLabel("");
@@ -92,14 +96,14 @@ public class Hats extends JPanel {
         lblKhat_I.setIcon(new ImageIcon(Hats.class.getResource("/resources/Pharaohs_Khat.png")));
         
         JPanel wolf_n = new JPanel();
-        Page_1.add(wolf_n, "cell 0 1,alignx left,aligny center");
+        Page_1.add(wolf_n);
         wolf_n.setBorder(b_name);
         
         JLabel lblWolf_N = new JLabel("Wolf Mask");
         wolf_n.add(lblWolf_N);
         
         JPanel wolf_d = new JPanel();
-        Page_1.add(wolf_d, "flowx,cell 1 1,alignx left,aligny center");
+        Page_1.add(wolf_d);
         wolf_d.setBorder(b_desc);
         
         JLabel lblWolf_D = new JLabel("<html><div>So, you like to howl at the moon?<br>"
@@ -112,32 +116,32 @@ public class Hats extends JPanel {
         wolf_d.add(lblWolf_D);
         
         JPanel wolf_i = new JPanel();
-        Page_1.add(wolf_i, "cell 2 1,alignx left,aligny top");
+        Page_1.add(wolf_i);
         wolf_i.setBorder(b_image);
         
         JLabel lblWolf_I = new JLabel("");
         lblWolf_I.setIcon(new ImageIcon(Hats.class.getResource("/resources/Wolf_Mask.png")));
-        wolf_i.add(lblWolf_I);*/
+        wolf_i.add(lblWolf_I);
         
-        JPanel Page_2 = new JPanel();
-        Page_2.setVisible(false);
+        Page_2 = new JPanel();
         GridBagConstraints gbc_Page_2 = new GridBagConstraints();
         gbc_Page_2.insets = new Insets(0, 0, 5, 0);
-        gbc_Page_2.fill = GridBagConstraints.BOTH;
+        gbc_Page_2.fill = GridBagConstraints.HORIZONTAL;
         gbc_Page_2.gridx = 0;
         gbc_Page_2.gridy = 0;
         hats.getContentPane().add(Page_2, gbc_Page_2);
-        Page_2.setLayout(new MigLayout("", "[94px][300.00px][182px]", "[273px][47px]"));
+        Page_2.setLayout(new GridLayout(0, 3, 0, 0));
         
         JPanel magnet_n = new JPanel();
-        Page_2.add(magnet_n, "cell 0 0,alignx left,aligny center");
+        Page_2.add(magnet_n);
         magnet_n.setBorder(b_name);
+        magnet_n.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         
         JLabel lblMagnet_N = new JLabel("Magnet Hat");
         magnet_n.add(lblMagnet_N);
         
         JPanel magnet_d = new JPanel();
-        Page_2.add(magnet_d, "cell 1 0,alignx left,aligny center");
+        Page_2.add(magnet_d);
         magnet_d.setBorder(b_desc);
         
         JLabel lblMagnet_D = new JLabel("<html><div>"
@@ -150,7 +154,7 @@ public class Hats extends JPanel {
         magnet_d.add(lblMagnet_D);
         
         JPanel magnet_i = new JPanel();
-        Page_2.add(magnet_i, "cell 2 0,alignx left,aligny center");
+        Page_2.add(magnet_i);
         magnet_i.setBorder(b_image);
         
         JLabel lblMagnet_I = new JLabel("");
@@ -158,14 +162,14 @@ public class Hats extends JPanel {
         magnet_i.add(lblMagnet_I);
         
         JPanel party_n = new JPanel();
-        Page_2.add(party_n, "cell 0 1,alignx left,aligny center");
+        Page_2.add(party_n);
         party_n.setBorder(b_name);
         
         JLabel lblParty_N = new JLabel("Party Hat");
         party_n.add(lblParty_N);
         
         JPanel party_d = new JPanel();
-        Page_2.add(party_d, "cell 1 1,alignx left,aligny center");
+        Page_2.add(party_d);
         party_d.setBorder(b_desc);
         
         JLabel lblParty_D = new JLabel("<html><div>"
@@ -176,7 +180,7 @@ public class Hats extends JPanel {
         party_d.add(lblParty_D);
         
         JPanel party_i = new JPanel();
-        Page_2.add(party_i, "cell 2 1,alignx left,aligny center");
+        Page_2.add(party_i);
         party_i.setBorder(b_image);
         
         JLabel lblParty_I = new JLabel("");
@@ -200,7 +204,7 @@ public class Hats extends JPanel {
         btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//Page_1.setVisible(true);
+				Page_1.setVisible(true);
 				Page_2.setVisible(false);
 			}
 		});
@@ -210,7 +214,7 @@ public class Hats extends JPanel {
         btnNewButton_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//Page_1.setVisible(false);
+				Page_1.setVisible(false);
 				Page_2.setVisible(true);
 			}
 		});
